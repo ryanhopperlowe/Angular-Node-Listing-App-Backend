@@ -1,4 +1,5 @@
 import { db } from "../database";
+import { extractUser } from "../lib/auth-token";
 
 export const updateListingRoute = {
   method: 'POST',
@@ -11,9 +12,7 @@ export const updateListingRoute = {
       price = 0
     } = req.payload;
 
-    console.log(req.params, req.payload);
-
-    const userId = '12345';
+    const { userId } = await extractUser(req);
 
     await db.query(`
       UPDATE listings 

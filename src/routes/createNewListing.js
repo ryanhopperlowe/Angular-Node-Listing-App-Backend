@@ -1,12 +1,13 @@
 import { v4 as uuid } from 'uuid';
 import { db } from '../database';
+import { extractUser } from '../lib/auth-token';
 
 export const createNewListingRoute = {
   method: 'POST',
   path: '/api/listings',
   handler: async (req, h) => {
     const id = uuid();
-    const userId = '11111';
+    const { userId } = await extractUser(req);
 
     const {
       name = '',
