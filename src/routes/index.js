@@ -1,6 +1,7 @@
 import { addViewToListingRoute } from "./addViewToListing";
 import { createNewListingRoute } from "./createNewListing";
 import { deleteListingRoute } from "./deleteListing";
+import { filesRoutes, staticFilesRoute } from "./files";
 import { getAllListingsRoute } from "./getAllListings";
 import { getListingRoute } from "./getListing";
 import { getUserListingsRoute } from "./getUserListings";
@@ -13,5 +14,7 @@ export default [
   getUserListingsRoute,
   createNewListingRoute,
   updateListingRoute,
-  deleteListingRoute
+  deleteListingRoute,
+  staticFilesRoute,
+  ...filesRoutes
 ];

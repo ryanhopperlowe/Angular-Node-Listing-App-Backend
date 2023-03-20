@@ -1,6 +1,5 @@
 import Boom from "@hapi/boom";
 import { db } from "../database";
-import { fakeListings } from "./fake-data";
 
 export const getListingRoute = {
   method: 'GET',
